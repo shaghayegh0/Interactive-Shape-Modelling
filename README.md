@@ -7,7 +7,7 @@
 4. brew install --cask xquartz
 5. open -a XQuartz
 6. export DISPLAY=:0
-7. g++ surfaceModeller.cpp -o a2 -DGL_SILENCE_DEPRECATION \
+7. g++ surfaceModeller.cpp -o a2 \
 -I/opt/homebrew/Cellar/freeglut/3.6.0/include \
 -I/opt/homebrew/Cellar/glew/2.2.0_1/include \
 -L/opt/homebrew/Cellar/freeglut/3.6.0/lib \
@@ -16,10 +16,14 @@
 8. ./a2
 
 ## headers for macOS
-- #include <GL/freeglut.h>
-- #include <math.h>
-- #include <string.h>
-- #include "surfaceModeller.h"
-- #include "subdivcurve.h"
-- #include <OpenGL/gl.h>
-- #include <OpenGL/glu.h>
+#define GL_SILENCE_DEPRECATION
+#include <GL/freeglut.h>
+#include <math.h>
+#include <string.h>
+#include "surfaceModeller.h"
+#include "subdivcurve.h"
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
+#include <unistd.h>
+#include <stdio.h>
+
